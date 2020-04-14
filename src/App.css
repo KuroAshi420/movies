@@ -52,3 +52,40 @@ margin-top: 40px;
   padding: 0 5px;
   font-size: 25px;
 } 
+.affich{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.modal{
+  height: 200px;
+width: 200px;
+font-size: 100px;
+margin: 100px;
+}
+.cls-modal{
+  display: flex;
+  justify-content: center;
+}
+.btn-modal{
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  color: #3f00ff;
+  font-size: 20px;
+  margin: 20px 20px;
+}
+.inpt-modal{
+  width: 400px;
+  height: 40px;
+  font-size: 18px;
+}
+.min-rating-stars2{
+  padding: 0 5px;
+  font-size: 50px;
+  margin: 15px 100px;
+} 
+.ttle{
+  text-align: center;
+  color: red;
+}

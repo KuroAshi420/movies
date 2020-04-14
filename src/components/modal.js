@@ -20,7 +20,8 @@ function Moda(props){
   var subtitle;
   const [modalIsOpen,setIsOpen] = React.useState(false);
   const [input,setInput] = React.useState("");
-  // const [ratingVal,setratingVal] = React.useState(0);
+  const [rating,setRating] = React.useState(0);
+
   function openModal() {
     setIsOpen(true);
   }
@@ -36,38 +37,46 @@ function Moda(props){
   function handelchange  (e) {
     setInput(e.target.value)
   }
-  function addTodo  (e) {
-    props.add({input,id: Date.now()})
+  function adds  (e) {
+    props.add({input,id: Date.now(),rating : rating})
     setInput("")
+    setRating(0)
     e.preventDefault();
   }
-  // function ratingchange  (e) {
-  //   setratingVal(StarRatingComponent.value)
-  // }
+ function onStarClick(nextValue, prevValue, name) {
+    setRating( nextValue);
+  }
+ 
     return (
-      <div>
-        <button onClick={openModal}>Open Modal</button>
+      <div className="cls-modal">
+        <button onClick={openModal} className="modal">+</button>
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
+          
         >
  
-          <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-          <button onClick={closeModal}>close</button>
-          <div>I am a modal</div>
+          <h2 ref={_subtitle => (subtitle = _subtitle)}>Movies form</h2>
+          
+          <div>
+          <StarRatingComponent
+            value={rating}
+            onStarClick={onStarClick}
+            className="min-rating-stars2"
+             />
+          </div>
           <form>
             <input type="text" 
+            placeholder="Enter movie name"
             value ={input}
-            onChange = {handelchange}/>
-            <button onClick={addTodo}>Create</button>
-            <StarRatingComponent
-             name="rate2" 
-            //  value ={rating}
-            // onChange = {ratingchange}
-             />
+            onChange = {handelchange}
+            className = "inpt-modal"
+            /> <br/>
+            <button onClick={adds} className="btn-modal">Create</button>
+            <button onClick={closeModal} className="btn-modal">close</button>
           </form>
         </Modal>
       </div>
