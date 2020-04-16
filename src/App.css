@@ -1,73 +1,68 @@
-.card{
-border: 3px solid black;
-height: 200px;
-width: 200px;
-margin: 10px 10px;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-flex-wrap: wrap-reverse
+.card {
+  border: 3px solid black;
+  height: 200px;
+  width: 200px;
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
 }
-.card-name{
+.card-name {
   border: 1px solid black;
   height: 30px;
   width: 100%;
 }
-.card-container{
 
-}
-.card-rating{
+.card-rating {
   border: 1px solid black;
   height: 30px;
   width: 70%;
-  
 }
-.main{
 
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 100px;
+  margin-top: 40px;
 }
-.search-bar{
-display: flex;
-flex-direction: row;
-justify-content: center;
-margin-bottom: 100px;
-margin-top: 40px;
-}
-.input{
+.input {
   width: 50%;
   height: 40px;
 }
-.search-btn{
+.search-btn {
   height: 46px;
-  width: 10%; 
+  width: 10%;
 }
-.min-rating{
+.min-rating {
   height: 46px;
-  width: 10%; 
+  width: 10%;
 }
-.parg{
+.parg {
   margin: 0;
   padding: 0 5px;
 }
-.min-rating-stars{
+.min-rating-stars {
   padding: 0 5px;
   font-size: 25px;
-} 
-.affich{
+}
+.affich {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.modal{
+.modal {
   height: 200px;
-width: 200px;
-font-size: 100px;
-margin: 100px;
+  width: 200px;
+  font-size: 100px;
+  margin: 100px;
 }
-.cls-modal{
+.cls-modal {
   display: flex;
   justify-content: center;
 }
-.btn-modal{
+.btn-modal {
   height: 40px;
   width: 100px;
   border-radius: 5px;
@@ -75,17 +70,36 @@ margin: 100px;
   font-size: 20px;
   margin: 20px 20px;
 }
-.inpt-modal{
+.inpt-modal {
   width: 400px;
   height: 40px;
   font-size: 18px;
 }
-.min-rating-stars2{
+.min-rating-stars2 {
   padding: 0 5px;
   font-size: 50px;
   margin: 15px 100px;
-} 
-.ttle{
+}
+.ttle {
   text-align: center;
   color: red;
+}
+.loading-spinner {
+  margin: 2px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  animation: loading-spinner-spin 1s linear infinite;
+  border: 2px solid var(--loading-spinner-outer-color, rgba(0, 0, 0, 0.3));
+  border-top: 2px solid var(--loading-spinner-inner-color, rgba(0, 0, 0, 1));
+  margin: 300px 600px;
+}
+
+@keyframes loading-spinner-spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
 }
